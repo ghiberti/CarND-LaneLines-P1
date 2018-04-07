@@ -14,7 +14,7 @@ Next a region of interest is extracted from the result of Canny. For the project
 
 Finally, the region of interest is put through HoughLinesP function to extract lane lines. I achieved the best result by setting 'theta' to 60 degrees and both 'min_line_length' and 'max_line_gap' to zero. This resulted in more granular lines as almost all them appeared to be a pixel wide.
 
-![Result] (https://github.com/ghiberti/CarND-LaneLines-P1/blob/master/examples/result.png)
+![Result](https://github.com/ghiberti/CarND-LaneLines-P1/blob/master/examples/result.png)
 
 In order to mark the full extent of the lane on the road, I figured I would need the X coordinates at extreme ends since Y dimension would be constraint by ROI. Thus extended the draw function to separate the lines returned by Hough Transform as left or right depending on the X coordinates. Then I calculated the min and max values for X coordinates on each side and slopes and intercepts of the lines that must connect them. Finally plotted this line on the image using the Y coordinates of the ROI.
 
